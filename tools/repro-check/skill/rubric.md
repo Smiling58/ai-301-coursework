@@ -1,53 +1,18 @@
 # Rubric: is this reproduction package ready to post?
 
-<!--
-THIS IS THE PART YOU WRITE. The skill in SKILL.md executes whatever
-checks you define here. It ships empty on purpose: the judgment is your
-work.
-
-A filled rubric must contain:
-
-1. At least one row in the checks table. Each row needs all four
-   columns:
-   - Check: a short name (used in the output JSON).
-   - Evidence: exactly what to look at, and where in the package. Name
-     the part (the claim comment, the repro report's environment
-     record, the artifacts read against the issue's description, the
-     repo-facts block) or a location from your
-     references/evidence-guide.md. "The report" is not a source; "the
-     output excerpt read against the error the issue describes" is.
-   - Pass condition: a decision rule about the OUTCOME that someone
-     else could apply and get your answer. Judge the thing itself (does
-     the artifact show the issue's behavior?), never the write-up's
-     shape (how many steps it has, how long it is, whether it uses a
-     template's headings). Structure-shaped checks are what make
-     graders disagree with themselves.
-   - Weight: `required` (a fail here holds the package) or `preferred`
-     (never changes the verdict).
-
-2. A verdict rule below the table: how the check grades combine into
-   accept (ready) or reject (hold), including how `unclear` is
-   treated. The verdict space is binary. If you write no rule for
-   `unclear`, the skill treats it as fail.
-
-Cover what actually gets bad packages posted. The lecture named the
-proof families: the environment is recorded, the steps are complete
-and followable, the behavior shown matches the issue (not an adjacent
-one), the outcome is stated honestly (an evidenced cannot-reproduce is
-a pass, a confident wrong-target is not), and the words respect the
-repo's conventions. A rubric that ignores a family will fail eval
-packages designed around that family.
--->
-
 ## Checks
 
 | Check | Evidence | Pass condition | Weight |
 |---|---|---|---|
-|  |  |  |  |
+| environment-matches-target | Repro report's environment statement, read against the issue's stated target version and any dependency named specifically enough to identify in the thread | Pass if the tool version matches the issue's stated target, or a stated deviation comes with an explanation. A thread comment triggers the dependency clause only if it names a specific dependency (or gives enough detail to unambiguously identify one) — a vague "might be a dependency issue" does not. When triggered, pass only if the report names that dependency's version and it's consistent with the thread's account, or an explained deviation. Fail otherwise. | required |
+| steps-followable | Repro report's steps section | Fail if any step describes an action generically rather than specifying the concrete input/command/target needed to execute it without guessing. Fail if the issue or thread gives evidence that a specific starting state is necessary and the steps don't establish or state it. Grade `unclear` if it's genuinely unknown whether a starting state matters (no evidence either way) and the steps don't mention one. Pass otherwise. | required |
+| behavior-matches-trigger | Repro report's artifacts (output/logs/screenshots), read against the issue's stated trigger condition and expected-vs-actual behavior | Fail if the artifact only matches the issue's symptom by general description without demonstrating the issue's specific trigger condition. Fail if the artifact instead demonstrates an adjacent condition (a different input count, a different code path) under the same symptom label. If the issue itself defines or relies on a contrast to characterize the trigger (e.g. "happens with X, not with Y"), fail if the report doesn't include that control/contrast. Pass if the artifact demonstrates the stated trigger, the resulting behavior, and any issue-defined contrast. | required |
+| honesty-calibrated | Claim comment and repro report, read for causal/conclusory language and any cannot-reproduce claim, against what the artifacts actually demonstrate | Fail if any statement asserts a cause, mechanism, or conclusion with more certainty than the shown evidence supports. Hedged language about an unverified cause passes even if later wrong. A cannot-reproduce claim passes only if it shows what was attempted and what actually happened under the issue's trigger conditions (the same artifact rigor a positive report needs) — a bare "couldn't reproduce it" with no shown attempt fails. Fail if the report misstates or falsely claims its own environment/steps matched the target (a genuinely mismatched environment is instead an Environment-check failure, not a Honesty failure, unless misrepresented). | required |
+| comms-specific | Claim comment and repro report, read against the issue's actual content | Fail if the comment could be pasted onto a different issue unchanged — i.e., it doesn't name the issue's specific symptom, trigger, or the reporter's own approach. Pass if it engages with specifics unique to this issue. | required |
+| comms-ai-disclosed | Repo-facts contribution policy's AI-use disclosure requirement, and the claim comment/repro report | Pass automatically if the policy states no AI-use requirement. If the policy requires disclosure when AI-assisted, pass if the comment discloses accordingly; fail if it's silent. Don't independently judge the extent of AI use beyond what the policy itself asks the comment to state. | required |
 
 ## Verdict rule
 
-<!-- State how the grades above combine into accept or reject, and how
-unclear is treated. Example shape (write your own): "accept if every
-required check passes; preferred checks never change the verdict;
-unclear counts as fail." -->
+Accept only if all six required checks grade `pass`. `unclear` counts
+as `fail`. No check is weighted above another — a failure in any
+required check sinks the verdict the same way.
