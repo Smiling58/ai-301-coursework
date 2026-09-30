@@ -15,8 +15,7 @@ label is not graded.
 
 **GitHub username**
 
-[Your GitHub username, exactly as it appears on your profile — no `@`, no profile URL. Your
-comments upstream are identified by this name.]
+Smiling58
 
 ---
 
@@ -24,9 +23,13 @@ comments upstream are identified by this name.]
 
 **Claim comment**
 
-[Link to the comment where you claimed the issue. Use the comment's own permalink, not the
-issue page on its own. **Then paste the text of that comment underneath the link** — the
-pasted text is what this field is graded on, so copy across what you actually posted.]
+Hi Larry @lgritz ! I'm a student currently working through CodePath's open-source contribution assignment, and I came across this issue while looking for something to work on.
+
+I saw your recent comments about the updated scope and that the previous contributor is no longer working on it. Would it be okay if I started working on this issue?
+
+I'm planning to first look at the existing wipe mode and how iv handles image comparisons, then work toward the absdiff and flip_diff functionality. I’d be happy to follow up with any questions as I get familiar with the codebase.
+
+Thanks!
 
 **Reproduction comment**
 
