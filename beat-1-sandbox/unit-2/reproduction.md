@@ -23,7 +23,7 @@ Smiling58
 
 **Claim comment**
 
-Hi Larry @lgritz ! I'm a student currently working through CodePath's open-source contribution assignment, and I came across this issue while looking for something to work on.
+https://github.com/AcademySoftwareFoundation/OpenImageIO/issues/4711 Hi Larry @lgritz ! I'm a student currently working through CodePath's open-source contribution assignment, and I came across this issue while looking for something to work on.
 
 I saw your recent comments about the updated scope and that the previous contributor is no longer working on it. Would it be okay if I started working on this issue?
 
@@ -33,42 +33,25 @@ Thanks!
 
 **Reproduction comment**
 
-[Link to the comment where you posted your reproduction. It must record the environment
-(OS, relevant versions, code state), steps a stranger could follow, and what you observed.
-**Then paste the text of that comment underneath the link** — the pasted text is what this
-field is graded on, so copy across what you actually posted.]
+Not completed yet. I have not successfully reproduced the issue at this time.
 
 ## Eval iterations
 
-Answer all four sections. Quote source text directly; paraphrase does not satisfy these
-fields.
-
 **Run history**
 
-[The agreement score of each run you did, in order. A single run is a complete answer if
-only one run occurred. **The last score in your list must match the agreement line in the
-`eval-run.txt` you committed** — that file is the record of your final run.]
+Not completed yet. No evaluation run has been performed.
 
 **Package analysis**
 
-[Pick one scored package (`pkg-01` through `pkg-20` — the four `calib-` packages are never
-scored). Name it by id, say what your rubric decided and what the gold label said, and
-explain why your rubric read it that way.]
+Not completed yet. I have not run the reproduction evaluation packages.
 
 **Check rationale**
 
-[Quote one check from the `rubric.md` you uploaded to `tools/repro-check/`, exactly as it reads now.
-Then say why it reads that way — what you revised to get there, or what you rejected in
-favour of it.]
+Not completed yet. I have not finalized the checks in `rubric.md`.
 
 **Trade-offs**
 
-[Every check gives something up. Any one of these is a complete answer: a package whose
-result it changes, a canary you re-ran with `--only`, a case you accept it will miss, or a
-stated reason nothing changed elsewhere. "Nothing changed, and here is how I know" earns
-the point in full when the reason follows.]
-
----
+Not completed yet. I have not run the evaluation or changed the rubric checks based on evaluation results.
 
 Related paths: `eval-run.txt` in this directory; your skill's files in
 `tools/repro-check/`.
